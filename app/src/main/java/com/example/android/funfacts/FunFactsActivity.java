@@ -23,8 +23,14 @@ public class FunFactsActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
             // The button was clicked, so update the fact label with a new label
-            String fact = "Ostriches can run faster than horses.";
-                factLabel.setText(fact);
+            String fact="";
+            // Randomly select a fact
+                
+
+
+
+            // Update the label with our dynamic fact
+            factLabel.setText(fact);
             }
         };
         showFactButton.setOnClickListener(listener);
