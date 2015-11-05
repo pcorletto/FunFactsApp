@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Random;
+
 
 public class FunFactsActivity extends ActionBarActivity {
 
@@ -25,9 +27,12 @@ public class FunFactsActivity extends ActionBarActivity {
             // The button was clicked, so update the fact label with a new label
             String fact="";
             // Randomly select a fact
-                
+            Random randomGenerator = new Random();   // Construct a new Random number generator
+                int randomNumber = randomGenerator.nextInt(3);
 
+                // We'll make our app only have 3 random facts
 
+                fact = randomNumber + "";
 
             // Update the label with our dynamic fact
             factLabel.setText(fact);
