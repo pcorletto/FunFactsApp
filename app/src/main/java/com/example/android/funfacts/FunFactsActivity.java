@@ -25,7 +25,8 @@ public class FunFactsActivity extends ActionBarActivity {
                 "The state of Florida is bigger than England.",
                 "Some penguins can leap 2-3 meters out of the water.",
                 "On average, it takes 66 days to form a new habit.",
-                "Mammoths still walked the earth when the Great Pyramid was being built."
+                "Mammoths still walked the earth when the Great Pyramid was being built.",
+                "Treehouse is actually not in a tree."
         };
 
 
@@ -52,32 +53,10 @@ public class FunFactsActivity extends ActionBarActivity {
                 *1 = Ostriches can run faster than horses
                 *2 = Olympic gold medals are actually made mostly of silver
 
-
-
-                // If randomNumber = 0
-                if(randomNumber == 0){
-                    // set fact = ants fact
-                    fact = "Ants stretch when they wake up in the morning";
-                }
-
-                // Else If randomNumber = 1
-                else if(randomNumber == 1){
-                    // set fact = ostriches fact
-                    fact = "Ostriches can run faster than horses";
-                }
-
-                // If randomNumber = 2
-                else if(randomNumber == 2){
-                    // set fact = olympic medal fact
-                    fact = "Olympic gold medals are actually made mostly of silver";
-                }
-
-                else {
-                    fact = "Sorry, there was an error";
-                }
                 */
 
                 fact = facts[randomNumber];
+
 
             // Update the label with our dynamic fact
             factLabel.setText(fact);
