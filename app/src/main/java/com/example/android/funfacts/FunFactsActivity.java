@@ -32,7 +32,35 @@ public class FunFactsActivity extends ActionBarActivity {
 
                 // We'll make our app only have 3 random facts
 
-                fact = randomNumber + "";
+                /* Convert our random number to a text fact
+
+                *0 = Ants stretch when they wake up in the morning
+                *1 = Ostriches can run faster than horses
+                *2 = Olympic gold medals are actually made mostly of silver
+
+                */
+
+                // If randomNumber = 0
+                if(randomNumber == 0){
+                    // set fact = ants fact
+                    fact = "Ants stretch when they wake up in the morning";
+                }
+
+                // Else If randomNumber = 1
+                else if(randomNumber == 1){
+                    // set fact = ostriches fact
+                    fact = "Ostriches can run faster than horses";
+                }
+
+                // If randomNumber = 2
+                else if(randomNumber == 2){
+                    // set fact = olympic medal fact
+                    fact = "Olympic gold medals are actually made mostly of silver";
+                }
+
+                else {
+                    fact = "Sorry, there was an error";
+                }
 
             // Update the label with our dynamic fact
             factLabel.setText(fact);
