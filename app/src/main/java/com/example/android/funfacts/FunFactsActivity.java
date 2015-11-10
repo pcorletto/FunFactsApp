@@ -13,6 +13,8 @@ public class FunFactsActivity extends ActionBarActivity {
 
     private FactBook mFactBook = new FactBook();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +39,7 @@ public class FunFactsActivity extends ActionBarActivity {
             int color2 = Color.parseColor(color);
 
             screen.setBackgroundColor(color2);
+
             }
         };
         showFactButton.setOnClickListener(listener);
