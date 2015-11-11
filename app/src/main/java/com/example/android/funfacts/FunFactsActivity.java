@@ -45,11 +45,9 @@ public class FunFactsActivity extends ActionBarActivity {
         };
         showFactButton.setOnClickListener(listener);
 
-        // A message for a Toast that is displayed when our app starts running.
-        String message = "Yay! Our Activity was created!";
-        // Create a new Toast variable and initialize it.
-        Toast welcomeToast = Toast.makeText(this, message, Toast.LENGTH_LONG);
-        welcomeToast.show();
+        // This is how we make and show a Toast message in just one line.
+        Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_LONG).show();
+
     }
 
 }
