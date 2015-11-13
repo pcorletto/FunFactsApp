@@ -3,14 +3,16 @@ package com.example.android.funfacts;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class FunFactsActivity extends ActionBarActivity {
+
+    public static final String TAG = FunFactsActivity.class.getSimpleName();
 
     private FactBook mFactBook = new FactBook();
 
@@ -46,8 +48,8 @@ public class FunFactsActivity extends ActionBarActivity {
         showFactButton.setOnClickListener(listener);
 
         // This is how we make and show a Toast message in just one line.
-        Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_LONG).show();
-
+        //Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_LONG).show();
+        Log.d(TAG, "We're logging from the onCreate() method!");
     }
 
 }
