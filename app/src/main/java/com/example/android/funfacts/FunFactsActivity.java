@@ -13,10 +13,37 @@ import android.widget.TextView;
 public class FunFactsActivity extends ActionBarActivity {
 
     public static final String TAG = FunFactsActivity.class.getSimpleName();
+    private static final String KEY_FACT = "KEY_FACT" ;
+    private static final String KEY_COLOR = "KEY_COLOR";
 
     private FactBook mFactBook = new FactBook();
+    private String mFact = mFactBook.mFacts[0];
+    private int mColor = Color.parseColor("#51b46d");
+
+    private TextView factLabel;
+    private Button showFactButton;
+    private RelativeLayout screen;
 
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putString(KEY_FACT, mFact);
+        outState.putInt(KEY_COLOR, mColor);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        mFact = savedInstanceState.getString(KEY_FACT);
+        mColor = savedInstanceState.getInt(KEY_COLOR);
+        factLabel.setText(mFact);
+        showFactButton.setTextColor(mColor);
+        screen.setBackgroundColor(mColor);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,24 +51,25 @@ public class FunFactsActivity extends ActionBarActivity {
         setContentView(R.layout.activity_fun_facts);
 
         // Declare our view variables and assign them the Views from the layout file.
-        final TextView factLabel = (TextView) findViewById(R.id.factTextView);
-        Button showFactButton = (Button) findViewById(R.id.showFactButton);
-        final RelativeLayout screen = (RelativeLayout) findViewById(R.id.screen);
+        factLabel = (TextView) findViewById(R.id.factTextView);
+        showFactButton = (Button) findViewById(R.id.showFactButton);
+        screen = (RelativeLayout) findViewById(R.id.screen);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-            String fact = mFactBook.getFact();
+            mFact = mFactBook.getFact();
             String color = mFactBook.getColor();
 
             // Update the label with our dynamic fact
-            factLabel.setText(fact);
+            factLabel.setText(mFact);
 
             //Dynamically change the background color
-            int color2 = Color.parseColor(color);
+            mColor = Color.parseColor(color);
 
-            screen.setBackgroundColor(color2);
+                screen.setBackgroundColor(mColor);
+                showFactButton.setTextColor(mColor);
 
             }
         };
